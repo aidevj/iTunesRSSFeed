@@ -1,0 +1,6 @@
+
+iTunesRSSFeed.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspacedata
+Pods/
+Podfile.lock
+Podfile

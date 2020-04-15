@@ -29,6 +29,8 @@ class RSSFeedViewController: UIViewController {
         tableView.rowHeight = 85
 
         //TODO: register custom cells
+        tableView.register(AlbumViewCell.self,
+                           forCellReuseIdentifier: AlbumViewCell.identifier)
         tableView.pin(to: view)
     }
 
@@ -44,9 +46,7 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumViewCell.identifier, for: indexPath)
+        return cell
     }
-
-
 }
-

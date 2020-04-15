@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iTunesRSSFeed
+@testable import RSSiTunesFeedTests
 
 // swiftlint:disable
 class RSSiTunesFeedTests: XCTestCase {

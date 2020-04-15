@@ -12,8 +12,17 @@
 		02A4F4652447540D00F1208C /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4642447540D00F1208C /* RSSFeedViewController.swift */; };
 		02A4F46A2447540F00F1208C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A4F4692447540F00F1208C /* Assets.xcassets */; };
 		02A4F46D2447540F00F1208C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A4F46B2447540F00F1208C /* LaunchScreen.storyboard */; };
-		02A4F4782447540F00F1208C /* iTunesRSSFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4772447540F00F1208C /* iTunesRSSFeedTests.swift */; };
+		02A4F4782447540F00F1208C /* RSSiTunesFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4772447540F00F1208C /* RSSiTunesFeedTests.swift */; };
 		02A4F48A24477A8300F1208C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F48924477A8300F1208C /* UIView+Extension.swift */; };
+		02A4F48C24477DB000F1208C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F48B24477DB000F1208C /* APIService.swift */; };
+		02A4F48E24477F4500F1208C /* AlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F48D24477F4500F1208C /* AlbumViewCell.swift */; };
+		02A4F49024477F8800F1208C /* PictureCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F48F24477F8800F1208C /* PictureCache.swift */; };
+		02A4F4922447812F00F1208C /* RSSiTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4912447812F00F1208C /* RSSiTunesAPI.swift */; };
+		02A4F4942447818100F1208C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4932447818100F1208C /* Album.swift */; };
+		02A4F497244786A100F1208C /* RSSFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F496244786A100F1208C /* RSSFeedViewModel.swift */; };
+		02A4F4992447892300F1208C /* DummyJSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02A4F4982447892300F1208C /* DummyJSONData.json */; };
+		42ECBCAEBF0689F5B2A86FF4 /* Pods_iTunesRSSFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D29186C6CCB5597278515A /* Pods_iTunesRSSFeed.framework */; };
+		F5FF3E554B9660078197FF47 /* Pods_iTunesRSSFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E450FDEE5336AD032F8F803C /* Pods_iTunesRSSFeedTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +44,22 @@
 		02A4F46C2447540F00F1208C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A4F46E2447540F00F1208C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A4F4732447540F00F1208C /* iTunesRSSFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesRSSFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02A4F4772447540F00F1208C /* iTunesRSSFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRSSFeedTests.swift; sourceTree = "<group>"; };
+		02A4F4772447540F00F1208C /* RSSiTunesFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSiTunesFeedTests.swift; sourceTree = "<group>"; };
 		02A4F4792447540F00F1208C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A4F48924477A8300F1208C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		02A4F48B24477DB000F1208C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		02A4F48D24477F4500F1208C /* AlbumViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumViewCell.swift; path = iTunesRSSFeed/View/AlbumViewCell.swift; sourceTree = SOURCE_ROOT; };
+		02A4F48F24477F8800F1208C /* PictureCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCache.swift; sourceTree = "<group>"; };
+		02A4F4912447812F00F1208C /* RSSiTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSiTunesAPI.swift; sourceTree = "<group>"; };
+		02A4F4932447818100F1208C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		02A4F496244786A100F1208C /* RSSFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedViewModel.swift; sourceTree = "<group>"; };
+		02A4F4982447892300F1208C /* DummyJSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyJSONData.json; sourceTree = "<group>"; };
+		638A4F64EA63C2AD74F080AB /* Pods-iTunesRSSFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeedTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeedTests/Pods-iTunesRSSFeedTests.release.xcconfig"; sourceTree = "<group>"; };
+		87D29186C6CCB5597278515A /* Pods_iTunesRSSFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesRSSFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9191F66EB937C9861E2F5765 /* Pods-iTunesRSSFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeed.release.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeed/Pods-iTunesRSSFeed.release.xcconfig"; sourceTree = "<group>"; };
+		9E223F91FC57266B19C3795C /* Pods-iTunesRSSFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeedTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeedTests/Pods-iTunesRSSFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A00CA03A007352A525AC9A6E /* Pods-iTunesRSSFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeed.debug.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeed/Pods-iTunesRSSFeed.debug.xcconfig"; sourceTree = "<group>"; };
+		E450FDEE5336AD032F8F803C /* Pods_iTunesRSSFeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesRSSFeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ECBCAEBF0689F5B2A86FF4 /* Pods_iTunesRSSFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FF3E554B9660078197FF47 /* Pods_iTunesRSSFeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +88,8 @@
 				02A4F45F2447540D00F1208C /* iTunesRSSFeed */,
 				02A4F4762447540F00F1208C /* iTunesRSSFeedTests */,
 				02A4F45E2447540D00F1208C /* Products */,
+				C7C5F3E2A7478683183B5066 /* Pods */,
+				66A6428F4443C77D4CE3F493 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +123,9 @@
 		02A4F4762447540F00F1208C /* iTunesRSSFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				02A4F4772447540F00F1208C /* iTunesRSSFeedTests.swift */,
+				02A4F4772447540F00F1208C /* RSSiTunesFeedTests.swift */,
 				02A4F4792447540F00F1208C /* Info.plist */,
+				02A4F4982447892300F1208C /* DummyJSONData.json */,
 			);
 			path = iTunesRSSFeedTests;
 			sourceTree = "<group>";
@@ -114,6 +141,7 @@
 		02A4F483244754A300F1208C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				02A4F48D24477F4500F1208C /* AlbumViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +149,7 @@
 		02A4F484244754A900F1208C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02A4F4932447818100F1208C /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +157,7 @@
 		02A4F485244754B400F1208C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				02A4F496244786A100F1208C /* RSSFeedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +165,9 @@
 		02A4F4862447553700F1208C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				02A4F48B24477DB000F1208C /* APIService.swift */,
+				02A4F48F24477F8800F1208C /* PictureCache.swift */,
+				02A4F4912447812F00F1208C /* RSSiTunesAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -155,6 +188,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		66A6428F4443C77D4CE3F493 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87D29186C6CCB5597278515A /* Pods_iTunesRSSFeed.framework */,
+				E450FDEE5336AD032F8F803C /* Pods_iTunesRSSFeedTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7C5F3E2A7478683183B5066 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A00CA03A007352A525AC9A6E /* Pods-iTunesRSSFeed.debug.xcconfig */,
+				9191F66EB937C9861E2F5765 /* Pods-iTunesRSSFeed.release.xcconfig */,
+				9E223F91FC57266B19C3795C /* Pods-iTunesRSSFeedTests.debug.xcconfig */,
+				638A4F64EA63C2AD74F080AB /* Pods-iTunesRSSFeedTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +215,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02A4F47C2447540F00F1208C /* Build configuration list for PBXNativeTarget "iTunesRSSFeed" */;
 			buildPhases = (
+				02A4F495244784EE00F1208C /* ShellScript */,
+				5570E16BA64DAE74816D307E /* [CP] Check Pods Manifest.lock */,
 				02A4F4592447540D00F1208C /* Sources */,
 				02A4F45A2447540D00F1208C /* Frameworks */,
 				02A4F45B2447540D00F1208C /* Resources */,
@@ -179,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02A4F47F2447540F00F1208C /* Build configuration list for PBXNativeTarget "iTunesRSSFeedTests" */;
 			buildPhases = (
+				3DC3EC4153844485B6191243 /* [CP] Check Pods Manifest.lock */,
 				02A4F46F2447540F00F1208C /* Sources */,
 				02A4F4702447540F00F1208C /* Frameworks */,
 				02A4F4712447540F00F1208C /* Resources */,
@@ -245,20 +301,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A4F4992447892300F1208C /* DummyJSONData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02A4F495244784EE00F1208C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		3DC3EC4153844485B6191243 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTunesRSSFeedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5570E16BA64DAE74816D307E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTunesRSSFeed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02A4F4592447540D00F1208C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A4F49024477F8800F1208C /* PictureCache.swift in Sources */,
 				02A4F4652447540D00F1208C /* RSSFeedViewController.swift in Sources */,
+				02A4F48C24477DB000F1208C /* APIService.swift in Sources */,
+				02A4F48E24477F4500F1208C /* AlbumViewCell.swift in Sources */,
 				02A4F4612447540D00F1208C /* AppDelegate.swift in Sources */,
+				02A4F4942447818100F1208C /* Album.swift in Sources */,
 				02A4F48A24477A8300F1208C /* UIView+Extension.swift in Sources */,
+				02A4F497244786A100F1208C /* RSSFeedViewModel.swift in Sources */,
 				02A4F4632447540D00F1208C /* SceneDelegate.swift in Sources */,
+				02A4F4922447812F00F1208C /* RSSiTunesAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A4F4782447540F00F1208C /* iTunesRSSFeedTests.swift in Sources */,
+				02A4F4782447540F00F1208C /* RSSiTunesFeedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +535,7 @@
 		};
 		02A4F47D2447540F00F1208C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A00CA03A007352A525AC9A6E /* Pods-iTunesRSSFeed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -426,6 +554,7 @@
 		};
 		02A4F47E2447540F00F1208C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9191F66EB937C9861E2F5765 /* Pods-iTunesRSSFeed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +573,7 @@
 		};
 		02A4F4802447540F00F1208C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E223F91FC57266B19C3795C /* Pods-iTunesRSSFeedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +596,7 @@
 		};
 		02A4F4812447540F00F1208C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 638A4F64EA63C2AD74F080AB /* Pods-iTunesRSSFeedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
