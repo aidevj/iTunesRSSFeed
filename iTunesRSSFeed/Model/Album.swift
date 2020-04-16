@@ -8,11 +8,18 @@
 
 import Foundation
 
-struct Feed: Decodable {
-    let feed: Results
+// {}feed
+//      []results
+//          {}0
+
+// []items
+//      {}0
+
+struct FeedContainer: Decodable {
+    let feed: AlbumResults
 }
 
-struct Results: Decodable {
+struct AlbumResults: Decodable {
     let results: [Album]
 }
 

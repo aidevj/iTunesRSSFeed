@@ -21,6 +21,8 @@
 		02A4F4942447818100F1208C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F4932447818100F1208C /* Album.swift */; };
 		02A4F497244786A100F1208C /* RSSFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F496244786A100F1208C /* RSSFeedViewModel.swift */; };
 		02A4F4992447892300F1208C /* DummyJSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02A4F4982447892300F1208C /* DummyJSONData.json */; };
+		02A4F49B2448426F00F1208C /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F49A2448426E00F1208C /* AlbumDetailsViewController.swift */; };
+		02A4F49D244842BC00F1208C /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F49C244842BC00F1208C /* AlbumDetailView.swift */; };
 		42ECBCAEBF0689F5B2A86FF4 /* Pods_iTunesRSSFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D29186C6CCB5597278515A /* Pods_iTunesRSSFeed.framework */; };
 		F5FF3E554B9660078197FF47 /* Pods_iTunesRSSFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E450FDEE5336AD032F8F803C /* Pods_iTunesRSSFeedTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		02A4F4932447818100F1208C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		02A4F496244786A100F1208C /* RSSFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedViewModel.swift; sourceTree = "<group>"; };
 		02A4F4982447892300F1208C /* DummyJSONData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyJSONData.json; sourceTree = "<group>"; };
+		02A4F49A2448426E00F1208C /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		02A4F49C244842BC00F1208C /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		638A4F64EA63C2AD74F080AB /* Pods-iTunesRSSFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeedTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeedTests/Pods-iTunesRSSFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		87D29186C6CCB5597278515A /* Pods_iTunesRSSFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesRSSFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191F66EB937C9861E2F5765 /* Pods-iTunesRSSFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRSSFeed.release.xcconfig"; path = "Target Support Files/Pods-iTunesRSSFeed/Pods-iTunesRSSFeed.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				02A4F4642447540D00F1208C /* RSSFeedViewController.swift */,
+				02A4F49A2448426E00F1208C /* AlbumDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				02A4F48D24477F4500F1208C /* AlbumViewCell.swift */,
+				02A4F49C244842BC00F1208C /* AlbumDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,9 +389,11 @@
 				02A4F4612447540D00F1208C /* AppDelegate.swift in Sources */,
 				02A4F4942447818100F1208C /* Album.swift in Sources */,
 				02A4F48A24477A8300F1208C /* UIView+Extension.swift in Sources */,
+				02A4F49D244842BC00F1208C /* AlbumDetailView.swift in Sources */,
 				02A4F497244786A100F1208C /* RSSFeedViewModel.swift in Sources */,
 				02A4F4632447540D00F1208C /* SceneDelegate.swift in Sources */,
 				02A4F4922447812F00F1208C /* RSSiTunesAPI.swift in Sources */,
+				02A4F49B2448426F00F1208C /* AlbumDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
