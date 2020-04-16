@@ -4,3 +4,4 @@ iTunesRSSFeed.xcodeproj/project.xcworkspace/xcuserdata/
 Pods/
 Podfile.lock
 Podfile
+.swiftlint.yml

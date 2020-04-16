@@ -1,11 +1,11 @@
-////
-////  RSSiTunesAPI.swift
-////  GitHubSearcher
-////
-////  Created by Aiden Melendez on 4/10/20.
-////  Copyright © 2020. All rights reserved.
-////
 //
+//  RSSiTunesAPI.swift
+//  GitHubSearcher
+//
+//  Created by Aiden Melendez on 4/10/20.
+//  Copyright © 2020. All rights reserved.
+//
+
 //import Foundation
 //
 //typealias SearchResultsHandler = (Result<UserSearchResultsContainer, APIError>) -> Void

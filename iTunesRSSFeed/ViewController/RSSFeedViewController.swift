@@ -26,9 +26,8 @@ class RSSFeedViewController: UIViewController {
 
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.rowHeight = 85
+        tableView.rowHeight = 100
 
-        //TODO: register custom cells
         tableView.register(AlbumViewCell.self,
                            forCellReuseIdentifier: AlbumViewCell.identifier)
         tableView.pin(to: view)

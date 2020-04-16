@@ -3,7 +3,7 @@
 //  iTunesRSSFeed
 //
 //  Created by Aiden Melendez on 4/15/20.
-//  Copyright © 2020 MAC. All rights reserved.
+//  Copyright © 2020. All rights reserved.
 //
 
 import Foundation
