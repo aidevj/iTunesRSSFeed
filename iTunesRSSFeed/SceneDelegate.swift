@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = RSSFeedViewController()
+        let rssViewModel = RSSFeedViewModel()
+        window?.rootViewController = RSSFeedViewController(viewModel: rssViewModel)
         window?.makeKeyAndVisible()
     }
 

@@ -22,7 +22,6 @@ class AlbumDetailView: UIView {
     // MARK: Setup Functionality
 
     private func setupViews() {
-        let mainView = UIView()
 
 // TODO: UI factory?
         let albumImage = UIImageView()

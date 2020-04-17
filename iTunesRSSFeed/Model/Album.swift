@@ -12,9 +12,6 @@ import Foundation
 //      []results
 //          {}0
 
-// []items
-//      {}0
-
 struct FeedContainer: Decodable {
     let feed: AlbumResults
 }
@@ -24,8 +21,8 @@ struct AlbumResults: Decodable {
 }
 
 struct Album: Decodable {
-    let name: String?
-    let artistName: String?
+    let name: String
+    let artistName: String
     let artworkUrl: String?
     let url: String?
 

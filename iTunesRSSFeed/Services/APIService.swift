@@ -53,7 +53,6 @@ final class APIService: APIServiceProtocol {
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             } catch {
-                print(error)
                 completion(.failure(.badDecoder(error.localizedDescription)))
             }
         }.resume()

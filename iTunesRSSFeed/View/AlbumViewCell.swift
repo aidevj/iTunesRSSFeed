@@ -9,6 +9,58 @@
 import UIKit
 
 class AlbumViewCell: UITableViewCell {
+    
+    let mainView: UIView = {
+        let mainView = UIView(frame: .zero)
+        mainView.backgroundColor = .gray
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        return mainView
+    }()
+    
+    let albumNameLabel: UILabel = {
+        let albumNameLabel = UILabel(frame: .zero)
+        albumNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        albumNameLabel.adjustsFontSizeToFitWidth = false
+        albumNameLabel.textAlignment = .center
+        albumNameLabel.text = "Album name text"
+        albumNameLabel.numberOfLines = 0
+        return albumNameLabel
+    }()
+    
+    let artistNameLabel: UILabel = {
+        let artistNameLabel = UILabel(frame: .zero)
+        artistNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        artistNameLabel.adjustsFontSizeToFitWidth = false
+        artistNameLabel.textAlignment = .center
+        artistNameLabel.text = "Artist name text"
+        artistNameLabel.numberOfLines = 0
+        return artistNameLabel
+    }()
+    
+    let albumImage: UIImageView = {
+        let albumImage = UIImageView(frame: .zero)
+        albumImage.contentMode = .scaleAspectFit
+        return albumImage
+    }()
+    
+    let labelsStackView: UIStackView = {
+        let labelsStackView = UIStackView()
+        labelsStackView.translatesAutoresizingMaskIntoConstraints = false
+        labelsStackView.axis = .vertical
+        labelsStackView.distribution = .fillEqually
+        labelsStackView.alignment = .center
+        labelsStackView.spacing = 5
+        return labelsStackView
+    }()
+    
+    let contentStackView: UIStackView = {
+        let contentStackView = UIStackView()
+        contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        contentStackView.axis = .horizontal
+        contentStackView.distribution = .fill
+        contentStackView.alignment = .fill
+        return contentStackView
+    }()
 
     static let identifier = "AlbumViewCell"
 
@@ -31,56 +83,20 @@ class AlbumViewCell: UITableViewCell {
 
     // MARK: - Setup Functionality
     private func setupViews() {
-        
-        // Set up main view for cell
-        let mainView = UIView(frame: CGRect(x: 0, y: 0, width: 500, height: 90))
-        mainView.backgroundColor = .gray
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        // Todo: add constraints after adding subview
-//        mainView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-//        mainView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
-//        mainView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-//        mainView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
-
-        let albumImage = UIImageView(frame: CGRect(x: 5, y: 5, width: 65, height: 65))
-
-        let albumNameLabel = UILabel(frame: .zero)
-        albumNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        albumNameLabel.adjustsFontSizeToFitWidth = false
-        albumNameLabel.textAlignment = .left
-        albumNameLabel.text = "Album name text"
-
-        let artistNameLabel = UILabel(frame: .zero)
-        artistNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        artistNameLabel.adjustsFontSizeToFitWidth = false
-        artistNameLabel.textAlignment = .left
-        artistNameLabel.text = "Artist name text"
-
-        let labelsStackView = UIStackView()
-        labelsStackView.translatesAutoresizingMaskIntoConstraints = false
-        labelsStackView.axis = .vertical
-        labelsStackView.distribution = .equalSpacing
-        labelsStackView.alignment = .center
-        labelsStackView.spacing = 5
-
         labelsStackView.addArrangedSubview(albumNameLabel)
         labelsStackView.addArrangedSubview(artistNameLabel)
-
-        let contentStackView = UIStackView()
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        contentStackView.axis = .horizontal
-        contentStackView.distribution = .fillEqually
-        contentStackView.alignment = .trailing
-
         contentStackView.addArrangedSubview(albumImage)
         contentStackView.addArrangedSubview(labelsStackView)
-
-        //TODO: Set Constraints
-
-        self.contentView.backgroundColor = .cyan
-
-        // Add subviews
         mainView.addSubview(contentStackView)
         self.contentView.addSubview(mainView)
+
+        contentStackView.pin(to: mainView)
+        mainView.pin(to: self.contentView)
+        let squareConstraint = albumImage.widthAnchor.constraint(equalTo: albumImage.heightAnchor)
+        squareConstraint.isActive = true
+        squareConstraint.priority = .defaultLow
+        albumImage.widthAnchor.constraint(equalTo: contentStackView.widthAnchor, multiplier: 0.25).isActive = true
+        
+        self.contentView.backgroundColor = .cyan
     }
 }
