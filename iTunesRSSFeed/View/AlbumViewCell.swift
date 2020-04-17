@@ -36,7 +36,7 @@ class AlbumViewCell: UITableViewCell {
         let mainView = UIView(frame: CGRect(x: 0, y: 0, width: 500, height: 90))
         mainView.backgroundColor = .gray
         mainView.translatesAutoresizingMaskIntoConstraints = false
-        // "UITableViewCellContentView:0x7f99b1c0d4d0.leading"> because they have no common ancestor.  Does the constraint or its anchors reference items in different view hierarchies?  That's illegal.'
+        // Todo: add constraints after adding subview
 //        mainView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
 //        mainView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
 //        mainView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true

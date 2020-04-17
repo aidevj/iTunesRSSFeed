@@ -1,0 +1,2 @@
+disabled_rules:
+    - orphaned_doc_comment

@@ -61,7 +61,7 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = viewModel.url(for: indexPath.row) else { return }
+//        guard let url = viewModel.url(for: indexPath.row) else { return }
 //        UIApplication.shared.open(url, options: [:])
     }
 }
