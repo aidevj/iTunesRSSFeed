@@ -8,10 +8,6 @@
 
 import Foundation
 
-// {}feed
-//      []results
-//          {}0
-
 struct FeedContainer: Decodable {
     let feed: AlbumResults
 }
@@ -24,10 +20,18 @@ struct Album: Decodable {
     let name: String
     let artistName: String
     let artworkUrl: String?
+    let genres: [Genre]
     let url: String?
+    let releaseDate: String?
+    let copyright: String
 
     private enum CodingKeys: String, CodingKey {
-        case name, artistName, url
+        case name, artistName
         case artworkUrl = "artworkUrl100"
+        case genres, url, releaseDate, copyright
     }
+}
+
+struct Genre: Decodable {
+    let name: String
 }

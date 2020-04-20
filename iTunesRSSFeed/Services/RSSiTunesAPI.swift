@@ -18,26 +18,29 @@ private enum RSSConstants {
 
 class RSSiTunesAPI {
 
-    // Example: https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json
-
     private let service: APIServiceProtocol
     private var currentSearch: DispatchWorkItem?
 
     init(service: APIServiceProtocol) {
         self.service = service
     }
+    
 }
 
 // MARK: Networking
 extension RSSiTunesAPI {
+    
     func fetchTop100(_ completion: @escaping FeedHandler) {
         service.get(type: FeedContainer.self, for: makeSearchUrl(), completion: completion)
     }
+    
 }
 
 // MARK: URL Builder
 extension RSSiTunesAPI {
+    
     private func makeSearchUrl() -> String {
         RSSConstants.root + RSSConstants.top100
     }
+    
 }

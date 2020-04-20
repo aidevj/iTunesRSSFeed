@@ -14,6 +14,10 @@ class PictureCache {
 
     private let session = URLSession(configuration: .default)
     private let queue = DispatchQueue.init(label: "PictureCache", qos: .utility, attributes: .concurrent)
+    
+}
+
+extension PictureCache {
 
     func insert(_ url: URL, image: Data) {
         let object = NSData(data: image)

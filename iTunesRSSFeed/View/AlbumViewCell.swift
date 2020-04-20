@@ -10,36 +10,25 @@ import UIKit
 
 class AlbumViewCell: UITableViewCell {
     
+    enum Constants {
+        static let margin: CGFloat = 20.0
+        static let widthRatio: CGFloat = 0.25
+    }
+    
     let mainView: UIView = {
         let mainView = UIView(frame: .zero)
-        mainView.backgroundColor = .gray
         mainView.translatesAutoresizingMaskIntoConstraints = false
         return mainView
     }()
     
-    let albumNameLabel: UILabel = {
-        let albumNameLabel = UILabel(frame: .zero)
-        albumNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        albumNameLabel.adjustsFontSizeToFitWidth = false
-        albumNameLabel.textAlignment = .center
-        albumNameLabel.text = "Album name text"
-        albumNameLabel.numberOfLines = 0
-        return albumNameLabel
-    }()
+    let albumNameLabel: UILabel = .simpleLabel()
     
-    let artistNameLabel: UILabel = {
-        let artistNameLabel = UILabel(frame: .zero)
-        artistNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        artistNameLabel.adjustsFontSizeToFitWidth = false
-        artistNameLabel.textAlignment = .center
-        artistNameLabel.text = "Artist name text"
-        artistNameLabel.numberOfLines = 0
-        return artistNameLabel
-    }()
+    let artistNameLabel: UILabel = .simpleLabel()
     
     let albumImage: UIImageView = {
         let albumImage = UIImageView(frame: .zero)
         albumImage.contentMode = .scaleAspectFit
+        albumImage.translatesAutoresizingMaskIntoConstraints = false
         return albumImage
     }()
     
@@ -51,15 +40,6 @@ class AlbumViewCell: UITableViewCell {
         labelsStackView.alignment = .center
         labelsStackView.spacing = 5
         return labelsStackView
-    }()
-    
-    let contentStackView: UIStackView = {
-        let contentStackView = UIStackView()
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        contentStackView.axis = .horizontal
-        contentStackView.distribution = .fill
-        contentStackView.alignment = .fill
-        return contentStackView
     }()
 
     static let identifier = "AlbumViewCell"
@@ -73,30 +53,30 @@ class AlbumViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+extension AlbumViewCell {
 
     // MARK: - Setup Functionality
     private func setupViews() {
         labelsStackView.addArrangedSubview(albumNameLabel)
         labelsStackView.addArrangedSubview(artistNameLabel)
-        contentStackView.addArrangedSubview(albumImage)
-        contentStackView.addArrangedSubview(labelsStackView)
-        mainView.addSubview(contentStackView)
+        mainView.addSubview(albumImage)
+        mainView.addSubview(labelsStackView)
         self.contentView.addSubview(mainView)
-
-        contentStackView.pin(to: mainView)
         mainView.pin(to: self.contentView)
-        let squareConstraint = albumImage.widthAnchor.constraint(equalTo: albumImage.heightAnchor)
-        squareConstraint.isActive = true
-        squareConstraint.priority = .defaultLow
-        albumImage.widthAnchor.constraint(equalTo: contentStackView.widthAnchor, multiplier: 0.25).isActive = true
         
-        self.contentView.backgroundColor = .cyan
+        let margin = Constants.margin
+        albumImage.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
+        albumImage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: margin).isActive = true
+        albumImage.trailingAnchor.constraint(equalTo: labelsStackView.leadingAnchor, constant: -margin).isActive = true
+        albumImage.bottomAnchor.constraint(lessThanOrEqualTo: mainView.bottomAnchor).isActive = true
+        albumImage.widthAnchor.constraint(equalTo: mainView.widthAnchor,
+                                          multiplier: Constants.widthRatio).isActive = true
+        albumImage.widthAnchor.constraint(equalTo: albumImage.heightAnchor).isActive = true
+        labelsStackView.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
+        labelsStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -margin).isActive = true
+        labelsStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
+        
     }
 }

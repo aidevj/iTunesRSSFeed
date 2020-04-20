@@ -47,14 +47,14 @@ extension AlbumViewModel {
     }
     
     var name: String {
-        album.name
+        "Album Name: " + album.name
     }
     
     var artistName: String {
-        album.artistName
+        "Artist: " + album.artistName
     }
     
-    func image(for index: Int, _ completion: @escaping (Data?) -> Void) {
+    func image(_ completion: @escaping (Data?) -> Void) {
         guard let urlString = album.artworkUrl,
             let url = URL(string: urlString) else {
             completion(nil)
@@ -62,5 +62,17 @@ extension AlbumViewModel {
         }
         pictureCache.get(url, completion)
     }
+    
+    var genre: String {
+        "Genre: " + album.genres.map { $0.name }.joined(separator: " ")
+    }
+    
+    var releaseDate: String {
+        "Release Date: " + (album.releaseDate ?? "unknown")
+    }
+    
+    var copyright: String {
+        album.copyright
+    } 
 
 }

@@ -11,7 +11,7 @@ import Foundation
 typealias UpdateHandler = () -> Void
 
 class RSSFeedViewModel {
-
+    
     private var albums = [Album]() {
         didSet {
             self.updateHandler?()
@@ -29,6 +29,10 @@ class RSSFeedViewModel {
         self.service = service
         iTunesAPI = RSSiTunesAPI(service: service)
     }
+    
+}
+
+extension RSSFeedViewModel {
     
     func bind(_ handler: @escaping UpdateHandler) {
         updateHandler = handler
@@ -49,7 +53,6 @@ class RSSFeedViewModel {
             case .success(let feedContainer):
                 self.albums = feedContainer.feed.results
             case .failure(let error):
-                // TODO: handle this later
                 print(error.localizedDescription)
             }
             

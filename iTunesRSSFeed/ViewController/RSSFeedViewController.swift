@@ -12,7 +12,7 @@ class RSSFeedViewController: UIViewController {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
-        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(AlbumViewCell.self,
                            forCellReuseIdentifier: AlbumViewCell.identifier)
         tableView.delegate = self
@@ -45,6 +45,7 @@ class RSSFeedViewController: UIViewController {
     }
     
     private func setupTableView() {
+        view.addSubview(tableView)
         tableView.pin(to: view)
     }
     
@@ -59,10 +60,15 @@ class RSSFeedViewController: UIViewController {
     private func fetchData() {
         viewModel.getFeed()
     }
+    
+    deinit {
+        viewModel.unbind()
+    }
 
 }
 
 extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
     }
@@ -71,12 +77,7 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = dequeueAlbumViewCell(for: indexPath)
         let row = indexPath.row
         viewModel.image(for: row) { (data) in
-            var image: UIImage?
-            defer {
-                cell.albumImage.setOnMain(image)
-            }
-            guard let data = data else { return }
-            image = UIImage(data: data)
+            cell.albumImage.setDataOrNil(data)
         }
         cell.albumNameLabel.text = viewModel.name(for: row)
         cell.artistNameLabel.text = viewModel.artistName(for: row)
@@ -88,9 +89,11 @@ extension RSSFeedViewController: UITableViewDelegate, UITableViewDataSource {
         let detailsViewController = AlbumDetailsViewController(viewModel: albumViewModel)
         present(detailsViewController, animated: true)
     }
+    
 }
 
 extension RSSFeedViewController {
+    
     func dequeueAlbumViewCell(for indexPath: IndexPath) -> AlbumViewCell {
         let identifier = AlbumViewCell.identifier
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier,
@@ -99,4 +102,5 @@ extension RSSFeedViewController {
         }
         return cell
     }
+    
 }
